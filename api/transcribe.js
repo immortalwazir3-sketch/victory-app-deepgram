@@ -1,4 +1,5 @@
-export const config = { runtime: 'edge' };
+// New Vercel edge runtime syntax
+export const runtime = 'edge';
 
 export default async function handler(request) {
 
@@ -41,8 +42,7 @@ export default async function handler(request) {
       bytes[i] = binaryStr.charCodeAt(i);
     }
 
-    // Deepgram Nova-2 — en-IN for Indian English accuracy
-    // smart_format cleans punctuation, filler_words removes uh/um
+    // Deepgram Nova-2 with Indian English model
     const dgUrl = 'https://api.deepgram.com/v1/listen' +
       '?model=nova-2' +
       '&language=en-IN' +
